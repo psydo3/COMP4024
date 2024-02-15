@@ -12,7 +12,7 @@ public class displayUserName : MonoBehaviour
         if (displayText != null)
         {
             // Set the text of a UI Text component to the userInput
-            displayText.text = "Hi "+startMain.getUserName()+"!";
+            displayText.text = "Hi "+StartMain.getUserName()+"!";
 
         }
     }
