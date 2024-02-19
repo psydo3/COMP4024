@@ -1,0 +1,9 @@
+{
+  "questions": [
+    {
+      "questionText": "3 * 3?",
+      "answers": ["9", "2", "0", "6"],
+      "correctAnswerIndex": 0
+    }
+  ]
+}
