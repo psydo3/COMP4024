@@ -2,7 +2,7 @@
   "questions": [
     {
       "questionText": "3 * 3?",
-      "answers": ["9", "2", "0", "6"],
+      "answers": ["9", "2", "0", "6", "8", "10"],
       "correctAnswerIndex": 0
     }
   ]
