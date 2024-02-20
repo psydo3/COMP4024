@@ -4,12 +4,13 @@ public class QuizManager : MonoBehaviour
 {
     public QuizData quizData; // Holds the loaded quiz data
     //Create a variable to track the user score
+    int userScore = 0;
 
     void Start()
     {
         //Call the appropriate function to load the quiz data
-        
-        //Add a log
+
+        Debug.Log("start called");
     }
 
     void loadQuizData()
@@ -18,6 +19,7 @@ public class QuizManager : MonoBehaviour
         quizData = JsonUtility.FromJson<QuizData>(quizJson.text); // Deserialize the JSON into the QuizData object
 
         //Add a log
+        Debug.Log("quiz data loaded");
     }
 
     void evaluateAnswer(int answer)
