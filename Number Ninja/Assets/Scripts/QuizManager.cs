@@ -4,7 +4,9 @@ public class QuizManager : MonoBehaviour
 {
     public QuizData quizData; // Holds the loaded quiz data
     //Create a variable to track the user score
-    int userScore = 0;
+    public static int userScore;
+    
+    //public TextMeshProUGUI displayScore;
 
     void Start()
     {
