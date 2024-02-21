@@ -5,6 +5,7 @@ public class QuizManager : MonoBehaviour
 {
     public QuizData quizData; // Holds the loaded quiz data
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI questionText;
     //Create a variable to track the user score
     int userScore;
     
@@ -24,6 +25,8 @@ public class QuizManager : MonoBehaviour
         quizData = JsonUtility.FromJson<QuizData>(quizJson.text); // Deserialize the JSON into the QuizData object
         //Add a log
         Debug.Log("quiz data loaded");
+
+        loadQuestion();
     }
 
     void evaluateAnswer(int answer)
@@ -40,6 +43,12 @@ public class QuizManager : MonoBehaviour
         }
 
         //Increase the score if correct
+    }
+
+    void loadQuestion()
+    {
+        Question question = quizData.questions[0];
+        questionText.text = question.questionText;
     }
 
     // Additional methods for quiz logic
