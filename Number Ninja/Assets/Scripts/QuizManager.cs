@@ -6,8 +6,16 @@ public class QuizManager : MonoBehaviour
     public QuizData quizData; // Holds the loaded quiz data
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI questionText;
+
+    public TextMeshProUGUI bubble1;
+    public TextMeshProUGUI bubble2;
+    public TextMeshProUGUI bubble3;
+    public TextMeshProUGUI bubble4;
+    public TextMeshProUGUI bubble5;
+    public TextMeshProUGUI bubble6;
     //Create a variable to track the user score
     int userScore;
+    int correctAnswer;
     
     //public TextMeshProUGUI displayScore;
 
@@ -27,6 +35,7 @@ public class QuizManager : MonoBehaviour
         Debug.Log("quiz data loaded");
 
         loadQuestion();
+        loadAnswers();
     }
 
     void evaluateAnswer(int answer)
@@ -49,6 +58,19 @@ public class QuizManager : MonoBehaviour
     {
         Question question = quizData.questions[0];
         questionText.text = question.questionText;
+    }
+
+    void loadAnswers(){
+        Question answers = quizData.questions[0];
+        
+        bubble1.text = answers.answers[0];
+        bubble2.text = answers.answers[1];
+        bubble3.text = answers.answers[2];
+        bubble4.text = answers.answers[3];
+        bubble5.text = answers.answers[4];
+        bubble6.text = answers.answers[5];
+
+        correctAnswer = answers.correctAnswerIndex;
     }
 
     // Additional methods for quiz logic
