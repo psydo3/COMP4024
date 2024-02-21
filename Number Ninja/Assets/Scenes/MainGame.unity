@@ -902,6 +902,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1037868677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037868679}
+  - component: {fileID: 1037868678}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1037868678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037868677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizData:
+    questions: []
+  scoreText: {fileID: 2083702236}
+--- !u!4 &1037868679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037868677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.586324, y: 3.4104614, z: -0.036504924}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1074487471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1155,7 @@ MonoBehaviour:
     - questionText: 
       answers: []
       correctAnswerIndex: 0
+  scoreText: {fileID: 0}
 --- !u!114 &1595479214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,8 +1434,8 @@ GameObject:
   - component: {fileID: 2083702234}
   - component: {fileID: 2083702237}
   - component: {fileID: 2083702236}
-  - component: {fileID: 2083702235}
   - component: {fileID: 2083702238}
+  - component: {fileID: 2083702239}
   m_Layer: 5
   m_Name: scoreText
   m_TagString: Untagged
@@ -1414,20 +1462,6 @@ RectTransform:
   m_AnchoredPosition: {x: 379, y: 154}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2083702235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2083702233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quizData:
-    questions: []
 --- !u!114 &2083702236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1539,6 +1573,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: {fileID: 904158565}
   scoreText: {fileID: 2083702236}
+--- !u!114 &2083702239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083702233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizData:
+    questions: []
+  scoreText: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1554,3 +1603,4 @@ SceneRoots:
   - {fileID: 219183860}
   - {fileID: 355248449}
   - {fileID: 1468033529}
+  - {fileID: 1037868679}
