@@ -24,6 +24,7 @@ public class QuizManager : MonoBehaviour
         Debug.Log("start called");
         //Call the appropriate function to load the quiz data
         loadQuizData();
+        userScore = 0;
         evaluateAnswer(0);
     }
 
@@ -38,20 +39,22 @@ public class QuizManager : MonoBehaviour
         loadAnswers();
     }
 
-    void evaluateAnswer(int answer)
+    void evaluateAnswer(int chosenAnswer)
     {
         //Add a log
         Debug.Log("Evaluate answer called");
 
         //Compare the answer the user has clicked with the answer from quiz data
-        userScore = 1;
+        if (chosenAnswer == correctAnswer)
+        {
+            userScore += 1;
+        }
+
         if (scoreText != null)
         {
             // Set the text of a UI Text component to the userInput
             scoreText.text = userScore.ToString();
         }
-
-        //Increase the score if correct
     }
 
     void loadQuestion()
