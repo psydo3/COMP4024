@@ -35,14 +35,15 @@ public class QuizManager : MonoBehaviour
         //Add a log
         Debug.Log("quiz data loaded");
 
-        loadQuestion();
-        loadAnswers();
+        loadQuestion(quizData);
+        loadAnswers(quizData);
     }
 
-    void evaluateAnswer(int chosenAnswer)
+     public void evaluateAnswer(int chosenAnswer)
     {
         //Add a log
-        Debug.Log("Evaluate answer called");
+        Debug.Log("Evaluate answer called - "+chosenAnswer+", "+correctAnswer);
+
 
         //Compare the answer the user has clicked with the answer from quiz data
         if (chosenAnswer == correctAnswer)
@@ -57,23 +58,33 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void loadQuestion()
+    public int getUserScore()
+    {
+        return userScore;
+    }
+
+    public void loadQuestion(QuizData quizData)
     {
         Question question = quizData.questions[0];
         questionText.text = question.questionText;
     }
 
-    void loadAnswers(){
-        Question answers = quizData.questions[0];
+    public void loadAnswers(QuizData quizData)
+    {
+        Question question = quizData.questions[0];
         
-        bubble1.text = answers.answers[0];
-        bubble2.text = answers.answers[1];
-        bubble3.text = answers.answers[2];
-        bubble4.text = answers.answers[3];
-        bubble5.text = answers.answers[4];
-        bubble6.text = answers.answers[5];
-
-        correctAnswer = answers.correctAnswerIndex;
+        if(bubble1 != null && bubble2 != null && bubble3 != null 
+            && bubble4 != null && bubble5 != null && bubble6 != null )
+        {
+            bubble1.text = question.answers[0];
+            bubble2.text = question.answers[1];
+            bubble3.text = question.answers[2];
+            bubble4.text = question.answers[3];
+            bubble5.text = question.answers[4];
+            bubble6.text = question.answers[5];
+        }
+        
+        correctAnswer = int.Parse(question.answers[question.correctAnswerIndex]);
     }
 
     // Additional methods for quiz logic
