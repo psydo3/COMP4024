@@ -4,6 +4,16 @@
       "questionText": "3 * 3?",
       "answers": ["9", "2", "0", "6", "8", "10"],
       "correctAnswerIndex": 0
+    },
+    {
+      "questionText": "1 + 1?",
+      "answers": ["11", "2", "7", "3", "4", "10"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "questionText": "10 + 10?",
+      "answers": ["11", "20", "0", "1", "4", "9"],
+      "correctAnswerIndex": 1
     }
   ]
 }

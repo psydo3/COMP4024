@@ -20,7 +20,7 @@ public class QuizManagerTests
                 }
             }
         };
-        quizManager.loadAnswers(quizManager.quizData);
+        quizManager.loadAnswers(quizManager.quizData, 0);
         quizManager.evaluateAnswer(2);
 
         Assert.AreEqual(1, quizManager.getUserScore()); // Expect score to increment by 1
@@ -42,7 +42,7 @@ public class QuizManagerTests
                 }
             }
         };
-        quizManager.loadAnswers(quizManager.quizData);
+        quizManager.loadAnswers(quizManager.quizData, 0);
         quizManager.evaluateAnswer(3);
 
         Assert.AreEqual(0, quizManager.getUserScore()); // Expect score to not change

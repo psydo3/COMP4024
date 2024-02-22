@@ -16,13 +16,17 @@ public class QuizManager : MonoBehaviour
     //Create a variable to track the user score
     int userScore;
     int correctAnswer;
+    int questionNumber = 0;
     
     //public TextMeshProUGUI displayScore;
 
     void Start()
     {
         Debug.Log("start called");
+
+        
         //Call the appropriate function to load the quiz data
+
         loadQuizData();
         userScore = 0;
         evaluateAnswer(0);
@@ -30,15 +34,20 @@ public class QuizManager : MonoBehaviour
 
     void loadQuizData()
     {
+        loadData();
+
+        loadQuestion(quizData, questionNumber);
+        loadAnswers(quizData, questionNumber);
+    }
+
+    public void loadData()
+    {
         TextAsset quizJson = Resources.Load<TextAsset>("quizData"); // Load the JSON file from Resources
         quizData = JsonUtility.FromJson<QuizData>(quizJson.text); // Deserialize the JSON into the QuizData object
         //Add a log
         Debug.Log("quiz data loaded");
-
-        loadQuestion(quizData);
-        loadAnswers(quizData);
     }
-
+    
      public void evaluateAnswer(int chosenAnswer)
     {
         //Add a log
@@ -63,28 +72,36 @@ public class QuizManager : MonoBehaviour
         return userScore;
     }
 
-    public void loadQuestion(QuizData quizData)
+    public void loadQuestion(QuizData quizData, int qNum)
     {
-        Question question = quizData.questions[0];
+        Question question = quizData.questions[qNum];
         questionText.text = question.questionText;
     }
 
-    public void loadAnswers(QuizData quizData)
+    public void loadAnswers(QuizData quizData, int qNum)
     {
-        Question question = quizData.questions[0];
+        Question question = quizData.questions[qNum];
         
         if(bubble1 != null && bubble2 != null && bubble3 != null 
             && bubble4 != null && bubble5 != null && bubble6 != null )
         {
-            bubble1.text = question.answers[0];
-            bubble2.text = question.answers[1];
-            bubble3.text = question.answers[2];
-            bubble4.text = question.answers[3];
-            bubble5.text = question.answers[4];
-            bubble6.text = question.answers[5];
+            
         }
-        
+        bubble1.text = question.answers[0];
+        bubble2.text = question.answers[1];
+        bubble3.text = question.answers[2];
+        bubble4.text = question.answers[3];
+        bubble5.text = question.answers[4];
+        bubble6.text = question.answers[5];
+
         correctAnswer = int.Parse(question.answers[question.correctAnswerIndex]);
+    }
+
+    public void loadNext()
+    {
+        questionNumber++;
+        loadQuestion(quizData, questionNumber);
+        loadAnswers(quizData, questionNumber);
     }
 
     // Additional methods for quiz logic
