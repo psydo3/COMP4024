@@ -15,7 +15,8 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI bubble6;
     //Create a variable to track the user score
     int userScore;
-    int correctAnswer;
+    public int correctAnswer;
+    public int chosenAnswer;
     int questionNumber = 0;
     
     //public TextMeshProUGUI displayScore;
@@ -24,7 +25,6 @@ public class QuizManager : MonoBehaviour
     {
         Debug.Log("start called");
 
-        
         //Call the appropriate function to load the quiz data
 
         loadQuizData();
@@ -48,7 +48,7 @@ public class QuizManager : MonoBehaviour
         Debug.Log("quiz data loaded");
     }
     
-     public void evaluateAnswer(int chosenAnswer)
+    public void evaluateAnswer(int chosenAnswer)
     {
         //Add a log
         Debug.Log("Evaluate answer called - "+chosenAnswer+", "+correctAnswer);
@@ -97,8 +97,12 @@ public class QuizManager : MonoBehaviour
         correctAnswer = int.Parse(question.answers[question.correctAnswerIndex]);
     }
 
-    public void loadNext()
+    public void loadNext(int index)
     {
+        Question question = quizData.questions[questionNumber];   
+        chosenAnswer = int.Parse(question.answers[index]);
+        evaluateAnswer(chosenAnswer);
+
         questionNumber++;
         loadQuestion(quizData, questionNumber);
         loadAnswers(quizData, questionNumber);

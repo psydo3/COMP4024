@@ -607,7 +607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 562937261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &562937261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,6 +1139,8 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
+  correctAnswer: 0
+  chosenAnswer: 0
 --- !u!4 &1037868679
 Transform:
   m_ObjectHideFlags: 0
@@ -1224,7 +1238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1089234950}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1089234950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,7 +1371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1438482719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438482719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1543,8 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
+  correctAnswer: 0
+  chosenAnswer: 0
 --- !u!114 &1595479214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,7 +1867,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1655209905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1655209905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1948,7 +2000,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1760273743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1760273743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,7 +2133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1812914028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037868678}
+        m_TargetAssemblyTypeName: QuizManager, Scripts
+        m_MethodName: loadNext
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1812914028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2547,6 +2623,8 @@ MonoBehaviour:
   bubble4: {fileID: 0}
   bubble5: {fileID: 0}
   bubble6: {fileID: 0}
+  correctAnswer: 0
+  chosenAnswer: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
