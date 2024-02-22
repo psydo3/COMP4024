@@ -13,13 +13,11 @@ public class displayUserName : MonoBehaviour
         {
             // Set the text of a UI Text component to the userInput
             displayText.text = "Hi "+StartMain.getUserName()+"!";
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
