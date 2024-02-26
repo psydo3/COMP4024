@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -99,6 +100,10 @@ public class QuizManager : MonoBehaviour
 
     public void loadNext(int index)
     {
+        if (questionNumber == 2)
+        {
+            SceneManager.LoadScene("ScorePage");
+        }
         Question question = quizData.questions[questionNumber];   
         chosenAnswer = int.Parse(question.answers[index]);
         evaluateAnswer(chosenAnswer);
