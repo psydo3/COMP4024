@@ -1,19 +1,54 @@
 {
   "questions": [
     {
-      "questionText": "3 * 3?",
-      "answers": ["9", "2", "0", "6", "8", "10"],
+      "questionText": "12-(4+3)?",
+      "answers": [ "10", "15", "2", "3", "24", "5" ],
+      "correctAnswerIndex": 5
+    },
+    {
+      "questionText": "(45 - 5) / 8 + 2?",
+      "answers": [ "16", "9", "7", "77", "24", "90" ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "questionText": "(2+3)^2?",
+      "answers": [ "25", "7", "50", "88", "90", "45" ],
       "correctAnswerIndex": 0
     },
     {
-      "questionText": "1 + 1?",
-      "answers": ["11", "2", "7", "3", "4", "10"],
+      "questionText": "3 + 4 * 5?",
+      "answers": [ "89", "23", "76", "42", "11", "37" ],
       "correctAnswerIndex": 1
     },
     {
-      "questionText": "10 + 10?",
-      "answers": ["11", "20", "0", "1", "4", "9"],
+      "questionText": "5 + 3 * 4 - 6?",
+      "answers": [ "22", "33", "44", "67", "11", "55" ],
+      "correctAnswerIndex": 4
+    },
+    {
+      "questionText": "20 - 8 / 2?",
+      "answers": [ "16", "99", "18", "27", "22", "35" ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "questionText": "9 / (2 + 1) * 8?",
+      "answers": [ "100", "12", "24", "33", "54", "22" ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "questionText": " 6 + 4 / 2 + 3^2?",
+      "answers": [ "19", "25", "67", "21", "22", "17" ],
+      "correctAnswerIndex": 5
+    },
+    {
+      "questionText": "4 + 2 * 3^2?",
+      "answers": [ "23", "22", "24", "61", "34", "99" ],
       "correctAnswerIndex": 1
+    },
+    {
+      "questionText": " 50 - 4 * 3^2?",
+      "answers": [ "78", "66", "23", "14", "18", "22" ],
+      "correctAnswerIndex": 3
     }
   ]
 }
