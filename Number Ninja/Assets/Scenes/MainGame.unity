@@ -610,7 +610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1129,8 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizData:
-    questions: []
   scoreText: {fileID: 2083702236}
   questionText: {fileID: 605514728}
   bubble1: {fileID: 428937067}
@@ -1139,8 +1137,6 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
-  correctAnswer: 0
-  chosenAnswer: 0
 --- !u!4 &1037868679
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1237,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1374,7 +1370,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1530,11 +1526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizData:
-    questions:
-    - questionText: 
-      answers: []
-      correctAnswerIndex: 0
   scoreText: {fileID: 2083702236}
   questionText: {fileID: 605514728}
   bubble1: {fileID: 428937067}
@@ -1543,8 +1534,6 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
-  correctAnswer: 0
-  chosenAnswer: 0
 --- !u!114 &1595479214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,7 +1859,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2003,7 +1992,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2136,7 +2125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1037868678}
         m_TargetAssemblyTypeName: QuizManager, Scripts
-        m_MethodName: loadNext
+        m_MethodName: loadNextQuestionOnClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2613,8 +2602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c448c3ba4e5e0449a0576ed6cc0a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizData:
-    questions: []
   scoreText: {fileID: 0}
   questionText: {fileID: 0}
   bubble1: {fileID: 0}
@@ -2623,8 +2610,6 @@ MonoBehaviour:
   bubble4: {fileID: 0}
   bubble5: {fileID: 0}
   bubble6: {fileID: 0}
-  correctAnswer: 0
-  chosenAnswer: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

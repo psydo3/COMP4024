@@ -8,7 +8,7 @@ public class QuizManagerTests
     public void evaluateAnswer_IncrementsScore_WhenCorrect()
     {
         var quizManager = new GameObject().AddComponent<QuizManager>();
-        quizManager.quizData = new QuizData
+        QuizData quizData = new QuizData
         {
             questions = new Question[]
             {
@@ -20,7 +20,8 @@ public class QuizManagerTests
                 }
             }
         };
-        quizManager.loadAnswers(quizManager.quizData, 0);
+        quizManager.setQuizData(quizData);
+        quizManager.loadAnswers(0);
         quizManager.evaluateAnswer(2);
 
         Assert.AreEqual(1, QuizManager.getUserScore()); // Expect score to increment by 1
@@ -30,7 +31,7 @@ public class QuizManagerTests
     public void evaluateAnswer_DoesNotIncrementScore_WhenIncorrect()
     {
         var quizManager = new GameObject().AddComponent<QuizManager>();
-        quizManager.quizData = new QuizData
+        QuizData quizData = new QuizData
         {
             questions = new Question[]
             {
@@ -42,7 +43,8 @@ public class QuizManagerTests
                 }
             }
         };
-        quizManager.loadAnswers(quizManager.quizData, 0);
+        quizManager.setQuizData(quizData);
+        quizManager.loadAnswers(0);
         quizManager.evaluateAnswer(3);
 
         Assert.AreEqual(0, QuizManager.getUserScore()); // Expect score to not change
