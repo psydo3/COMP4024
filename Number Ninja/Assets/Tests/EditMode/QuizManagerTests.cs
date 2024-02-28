@@ -23,7 +23,7 @@ public class QuizManagerTests
         quizManager.loadAnswers(quizManager.quizData, 0);
         quizManager.evaluateAnswer(2);
 
-        Assert.AreEqual(1, quizManager.getUserScore()); // Expect score to increment by 1
+        Assert.AreEqual(1, QuizManager.getUserScore()); // Expect score to increment by 1
     }
 
     [Test]
@@ -45,7 +45,7 @@ public class QuizManagerTests
         quizManager.loadAnswers(quizManager.quizData, 0);
         quizManager.evaluateAnswer(3);
 
-        Assert.AreEqual(0, quizManager.getUserScore()); // Expect score to not change
+        Assert.AreEqual(0, QuizManager.getUserScore()); // Expect score to not change
     }
 
 }

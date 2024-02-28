@@ -409,6 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581194489}
+  - component: {fileID: 581194490}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -424,13 +425,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581194488}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0066631627, y: 0.00037363617, z: 0.00007561419}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -427.40668, y: -188.59964, z: 0.00007561419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1521078020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581194490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581194488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d43f68289ca7614bb1d15802fa54a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 527426635}
+  userScore: {fileID: 1844858138}
 --- !u!1 &1492262218
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +635,7 @@ RectTransform:
   - {fileID: 254878265}
   - {fileID: 527426634}
   - {fileID: 1844858137}
+  - {fileID: 581194489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -768,6 +784,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1492262221}
-  - {fileID: 581194489}
   - {fileID: 1521078020}
   - {fileID: 355798809}

@@ -15,7 +15,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI bubble5;
     public TextMeshProUGUI bubble6;
     //Create a variable to track the user score
-    int userScore;
+    public static int userScore;
     public int correctAnswer;
     public int chosenAnswer;
     int questionNumber = 0;
@@ -68,7 +68,7 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public int getUserScore()
+    public static int getUserScore()
     {
         return userScore;
     }
@@ -100,17 +100,23 @@ public class QuizManager : MonoBehaviour
 
     public void loadNext(int index)
     {
-        if (questionNumber == 2)
-        {
-            SceneManager.LoadScene("ScorePage");
-        }
+        
         Question question = quizData.questions[questionNumber];   
         chosenAnswer = int.Parse(question.answers[index]);
         evaluateAnswer(chosenAnswer);
 
-        questionNumber++;
-        loadQuestion(quizData, questionNumber);
-        loadAnswers(quizData, questionNumber);
+        questionNumber += 1;
+
+        if (questionNumber < quizData.questions.Length)
+        {
+            loadQuestion(quizData, questionNumber);
+            loadAnswers(quizData, questionNumber);
+        }
+        else
+        {
+            SceneManager.LoadScene("ScorePage");
+        }
+        
     }
 
     // Additional methods for quiz logic
