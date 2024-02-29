@@ -1,53 +1,50 @@
 using NUnit.Framework;
 using UnityEngine;
 
+[TestFixture]
 public class QuizManagerTests
 {
-    
-    [Test]
-    public void evaluateAnswer_IncrementsScore_WhenCorrect()
+    private QuizManager quizManager;
+
+    [SetUp]
+    public void SetUp()
     {
-        var quizManager = new GameObject().AddComponent<QuizManager>();
-        QuizData quizData = new QuizData
+        // Initialize QuizManager
+        quizManager = new GameObject().AddComponent<QuizManager>();
+
+        var mockQuizData = new QuizData
         {
             questions = new Question[]
             {
-                new Question
-                {
-                    questionText = "1+1",
-                    answers = new string[] { "1", "2", "3", "4", "5", "6" },
-                    correctAnswerIndex = 1
-                }
+                new Question { questionText = "1+1?", answers = new string[] {"99", "2", "31"}, correctAnswerIndex = 1 },
+                new Question { questionText = "2+1?", answers = new string[] {"100", "22", "3"}, correctAnswerIndex = 2 }
             }
         };
-        quizManager.setQuizData(quizData);
+
+        quizManager.setQuizData(mockQuizData);
+        QuizManager.userScore = 0;
+    }
+
+    [Test]
+    public void EvaluateAnswer_IncreasesScore_WhenCorrect()
+    {
         quizManager.loadAnswers(0);
         quizManager.evaluateAnswer(2);
-
-        Assert.AreEqual(1, QuizManager.getUserScore()); // Expect score to increment by 1
+        Assert.AreEqual(1, QuizManager.getUserScore());
     }
 
     [Test]
-    public void evaluateAnswer_DoesNotIncrementScore_WhenIncorrect()
+    public void EvaluateAnswer_DoesNotIncreaseScore_WhenIncorrect()
     {
-        var quizManager = new GameObject().AddComponent<QuizManager>();
-        QuizData quizData = new QuizData
-        {
-            questions = new Question[]
-            {
-                new Question
-                {
-                    questionText = "1+1",
-                    answers = new string[] { "1", "2", "3", "4", "5", "6" },
-                    correctAnswerIndex = 1
-                }
-            }
-        };
-        quizManager.setQuizData(quizData);
         quizManager.loadAnswers(0);
-        quizManager.evaluateAnswer(3);
-
-        Assert.AreEqual(0, QuizManager.getUserScore()); // Expect score to not change
+        quizManager.evaluateAnswer(999);
+        Assert.AreEqual(0, QuizManager.getUserScore());
     }
 
+    [Test]
+    public void LoadNextQuestionOnClick_LoadsNextQuestion_WhenCalled()
+    {
+        quizManager.loadNextQuestionOnClick(0); // Simulate clicking the first answer
+        Assert.AreEqual(1, quizManager.getQuestionNumber()); // Verify that questionNumber is incremented
+    }
 }

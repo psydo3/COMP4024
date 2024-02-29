@@ -66,7 +66,10 @@ public class QuizManager : MonoBehaviour
     public void loadQuestion(int qNum)
     {
         Question question = quizData.questions[qNum];
-        questionText.text = question.questionText;
+        if(questionText != null)
+        {
+            questionText.text = question.questionText;
+        }
     }
 
     public void loadAnswers(int qNum)
@@ -111,5 +114,10 @@ public class QuizManager : MonoBehaviour
     public void setQuizData(QuizData quizData)
     {
         this.quizData = quizData;
+    }
+
+    public int getQuestionNumber()
+    {
+        return questionNumber;
     }
 }
