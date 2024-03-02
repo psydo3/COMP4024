@@ -760,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23, y: 87}
+  m_AnchoredPosition: {x: 22.99701, y: 87}
   m_SizeDelta: {x: 258.9772, y: 35.2853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605514728
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Question here
+  m_text: Loading...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1137,6 +1137,14 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
+  bubbleImg1: {fileID: 1438482719}
+  bubbleImg2: {fileID: 1089234950}
+  bubbleImg3: {fileID: 562937261}
+  bubbleImg4: {fileID: 1655209905}
+  bubbleImg5: {fileID: 1760273743}
+  bubbleImg6: {fileID: 1812914028}
+  chosenIndex: 10
+  incorrectIndex: 10
 --- !u!4 &1037868679
 Transform:
   m_ObjectHideFlags: 0
@@ -1534,6 +1542,14 @@ MonoBehaviour:
   bubble4: {fileID: 2026308170}
   bubble5: {fileID: 64925498}
   bubble6: {fileID: 1942777361}
+  bubbleImg1: {fileID: 0}
+  bubbleImg2: {fileID: 0}
+  bubbleImg3: {fileID: 0}
+  bubbleImg4: {fileID: 0}
+  bubbleImg5: {fileID: 0}
+  bubbleImg6: {fileID: 0}
+  chosenIndex: 0
+  incorrectIndex: 0
 --- !u!114 &1595479214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,6 +2626,14 @@ MonoBehaviour:
   bubble4: {fileID: 0}
   bubble5: {fileID: 0}
   bubble6: {fileID: 0}
+  bubbleImg1: {fileID: 0}
+  bubbleImg2: {fileID: 0}
+  bubbleImg3: {fileID: 0}
+  bubbleImg4: {fileID: 0}
+  bubbleImg5: {fileID: 0}
+  bubbleImg6: {fileID: 0}
+  chosenIndex: 0
+  incorrectIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
