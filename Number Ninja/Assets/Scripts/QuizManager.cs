@@ -1,6 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
@@ -15,25 +18,34 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI bubble5;
     public TextMeshProUGUI bubble6;
 
+    public Image bubbleImg1;
+    public Image bubbleImg2;
+    public Image bubbleImg3;
+    public Image bubbleImg4;
+    public Image bubbleImg5;
+    public Image bubbleImg6;
+
     public static int userScore; // Variable to track the user score
     int correctAnswer; // The correct answer to the question
     int chosenAnswer; // The answer selected by the user
     int questionNumber = 0; // Current question number
-
+    public int chosenIndex;
+    public int incorrectIndex = 10;
+    
     void Start()
     {
         Debug.Log("Start called from QuizManager");
 
         loadQuizData();
         userScore = 0;
-        evaluateAnswer(0);
+        evaluateAnswer(10);
     }
 
     void loadQuizData()
     {
         loadQuizDataFromJson();
-        loadQuestion(questionNumber);
-        loadAnswers(questionNumber);
+        StartCoroutine (loadQuestion(questionNumber));
+        StartCoroutine (loadAnswers(questionNumber));
     }
 
     public void loadQuizDataFromJson()
@@ -49,7 +61,39 @@ public class QuizManager : MonoBehaviour
         //Compare the answer the user has clicked with the answer from quiz data
         if (chosenAnswer == correctAnswer)
         {
+            Debug.Log(chosenIndex);
+
+            if(chosenIndex == 0){
+                bubbleImg1.color = Color.green;
+            } else if(chosenIndex == 1){
+                bubbleImg2.color = Color.green;
+            } else if(chosenIndex == 2){
+                bubbleImg3.color = Color.green;
+            } else if(chosenIndex == 3){
+                bubbleImg4.color = Color.green;
+            } else if(chosenIndex == 4){
+                bubbleImg5.color = Color.green;
+            } else if(chosenIndex == 5){
+                bubbleImg6.color = Color.green;
+            }
+
             userScore += 1;
+        }
+        else {
+            if(incorrectIndex == 0){
+                bubbleImg1.color = Color.red;
+            } else if(incorrectIndex == 1){
+                bubbleImg2.color = Color.red;
+            } else if(incorrectIndex == 2){
+                bubbleImg3.color = Color.red;
+            } else if(incorrectIndex == 3){
+                bubbleImg4.color = Color.red;
+            } else if(incorrectIndex == 4){
+                bubbleImg5.color = Color.red;
+            } else if(incorrectIndex == 5){
+                bubbleImg6.color = Color.red;
+            }
+
         }
 
         if (scoreText != null)
@@ -63,8 +107,9 @@ public class QuizManager : MonoBehaviour
         return userScore;
     }
 
-    public void loadQuestion(int qNum)
+    public IEnumerator loadQuestion(int qNum)
     {
+        yield return new WaitForSeconds(2);
         Question question = quizData.questions[qNum];
         if(questionText != null)
         {
@@ -72,8 +117,17 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void loadAnswers(int qNum)
+    public IEnumerator loadAnswers(int qNum)
     {
+        yield return new WaitForSeconds(2);
+
+        bubbleImg1.color = Color.white;
+        bubbleImg2.color = Color.white;
+        bubbleImg3.color = Color.white;
+        bubbleImg4.color = Color.white;
+        bubbleImg5.color = Color.white;
+        bubbleImg6.color = Color.white;
+
         Question question = quizData.questions[qNum];
 
         if (bubble1 != null && bubble2 != null && bubble3 != null
@@ -92,7 +146,9 @@ public class QuizManager : MonoBehaviour
 
     public void loadNextQuestionOnClick(int index)
     {
-        Question question = quizData.questions[questionNumber];   
+        incorrectIndex = index;
+        Question question = quizData.questions[questionNumber];
+        chosenIndex = question.correctAnswerIndex;
         chosenAnswer = int.Parse(question.answers[index]);
         evaluateAnswer(chosenAnswer);
 
@@ -101,14 +157,13 @@ public class QuizManager : MonoBehaviour
         // Load the next question until all questions are answered
         if (questionNumber < quizData.questions.Length)
         {
-            loadQuestion(questionNumber);
-            loadAnswers(questionNumber);
+            StartCoroutine (loadQuestion(questionNumber));
+            StartCoroutine (loadAnswers(questionNumber));
         }
         else
         {
             SceneManager.LoadScene("ScorePage"); // Go to final score page once all the questions are answered
         }
-        
     }
 
     public void setQuizData(QuizData quizData)
