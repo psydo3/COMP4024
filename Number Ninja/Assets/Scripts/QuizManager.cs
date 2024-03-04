@@ -29,8 +29,8 @@ public class QuizManager : MonoBehaviour
     int correctAnswer; // The correct answer to the question
     int chosenAnswer; // The answer selected by the user
     int questionNumber = 0; // Current question number
-    public int chosenIndex;
-    public int incorrectIndex = 10;
+    public int chosenIndex; // Answer index chosen by user
+    public int incorrectIndex = 10; // Incorrect index chosen by user
     
     void Start()
     {
@@ -59,10 +59,12 @@ public class QuizManager : MonoBehaviour
     public void evaluateAnswer(int chosenAnswer)
     {
         //Compare the answer the user has clicked with the answer from quiz data
+        //When answer is correct
         if (chosenAnswer == correctAnswer)
         {
             Debug.Log(chosenIndex);
 
+            // Change color of selected bubble to green
             if(chosenIndex == 0){
                 bubbleImg1.color = Color.green;
             } else if(chosenIndex == 1){
@@ -77,9 +79,12 @@ public class QuizManager : MonoBehaviour
                 bubbleImg6.color = Color.green;
             }
 
+            // Add one to score 
             userScore += 1;
         }
+        // When answer is incorrect
         else {
+            // Change color of selected bubble to red
             if(incorrectIndex == 0){
                 bubbleImg1.color = Color.red;
             } else if(incorrectIndex == 1){
@@ -121,6 +126,7 @@ public class QuizManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
+        // Change color of bubble back to white
         bubbleImg1.color = Color.white;
         bubbleImg2.color = Color.white;
         bubbleImg3.color = Color.white;
