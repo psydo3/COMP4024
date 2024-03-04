@@ -66,17 +66,17 @@ public class QuizManager : MonoBehaviour
 
             // Change color of selected bubble to green
             if(chosenIndex == 0){
-                bubbleImg1.color = Color.green;
+                bubbleImg1.color = new Color(114 / 255f, 210 / 255f, 135 / 255f); 
             } else if(chosenIndex == 1){
-                bubbleImg2.color = Color.green;
+                bubbleImg2.color = new Color(114 / 255f, 210 / 255f, 135 / 255f);
             } else if(chosenIndex == 2){
-                bubbleImg3.color = Color.green;
+                bubbleImg3.color = new Color(114 / 255f, 210 / 255f, 135 / 255f);
             } else if(chosenIndex == 3){
-                bubbleImg4.color = Color.green;
+                bubbleImg4.color = new Color(114 / 255f, 210 / 255f, 135 / 255f);
             } else if(chosenIndex == 4){
-                bubbleImg5.color = Color.green;
+                bubbleImg5.color = new Color(114 / 255f, 210 / 255f, 135 / 255f);
             } else if(chosenIndex == 5){
-                bubbleImg6.color = Color.green;
+                bubbleImg6.color = new Color(114 / 255f, 210 / 255f, 135 / 255f);
             }
 
             // Add one to score 
@@ -86,17 +86,17 @@ public class QuizManager : MonoBehaviour
         else {
             // Change color of selected bubble to red
             if(incorrectIndex == 0){
-                bubbleImg1.color = Color.red;
+                bubbleImg1.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             } else if(incorrectIndex == 1){
-                bubbleImg2.color = Color.red;
+                bubbleImg2.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             } else if(incorrectIndex == 2){
-                bubbleImg3.color = Color.red;
+                bubbleImg3.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             } else if(incorrectIndex == 3){
-                bubbleImg4.color = Color.red;
+                bubbleImg4.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             } else if(incorrectIndex == 4){
-                bubbleImg5.color = Color.red;
+                bubbleImg5.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             } else if(incorrectIndex == 5){
-                bubbleImg6.color = Color.red;
+                bubbleImg6.color = new Color(218 / 255f, 131 / 255f, 112 / 255f);
             }
 
         }
