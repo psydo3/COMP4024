@@ -10,6 +10,7 @@ public class StartMain : MonoBehaviour
 
     public void LoadScene()
     {
+        //Start the game if name is not left null
         if (userName != "" && userName != null)
         {
             SceneManager.LoadScene("MainGame");
@@ -17,6 +18,7 @@ public class StartMain : MonoBehaviour
         else
         {
             Debug.Log("No input given!");
+            //Name is left null so give error message
             if(displayErrorField != null)
             {
                 displayErrorField.text = "No input given!";
