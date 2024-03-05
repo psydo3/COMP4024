@@ -25,11 +25,13 @@ public class DisplayUserFeedback : MonoBehaviour
         totalNumQuestions = QuizManager.feedbackList.Count;
     }
 
+    //Starts the game again
     public void startNewGameOnClick()
     {
         SceneManager.LoadScene("MainGame");
     }
 
+    //Next question feedback
     public void showNextFeedbackOnClick()
     {
         if(questionNumber >= 0 && questionNumber < totalNumQuestions-1)
@@ -39,6 +41,7 @@ public class DisplayUserFeedback : MonoBehaviour
         }
     }
 
+    //Previous question feedback
     public void showPrevFeedbackOnClick()
     {
         if (questionNumber >= 1 && questionNumber < totalNumQuestions)
@@ -48,11 +51,13 @@ public class DisplayUserFeedback : MonoBehaviour
         }
     }
 
+    //Load score page
     public void showScorePageOnClick()
     {
         SceneManager.LoadScene("ScorePage");
     }
 
+    //Appropriate tick or cross images are chosen depending on user answer
     void setFeedbackFields(int questionNumber)
     {
         int qNumToDisplay = questionNumber + 1;

@@ -42,6 +42,7 @@ public class QuizManager : MonoBehaviour
         evaluateAnswer(null, 10);
     }
 
+    //Loads questions and answers from file
     void loadQuizData()
     {
         loadQuizDataFromJson();
@@ -140,6 +141,7 @@ public class QuizManager : MonoBehaviour
 
         Question question = quizData.questions[qNum];
 
+        //Populate bubbles with answer options
         if (bubble1 != null && bubble2 != null && bubble3 != null
             && bubble4 != null && bubble5 != null && bubble6 != null)
         {
@@ -154,6 +156,7 @@ public class QuizManager : MonoBehaviour
         correctAnswer = int.Parse(question.answers[question.correctAnswerIndex]);
     }
 
+    //Populate with next question and answer options
     public void loadNextQuestionOnClick(int index)
     {
         incorrectIndex = index;
