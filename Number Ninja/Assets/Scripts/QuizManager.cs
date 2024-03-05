@@ -118,7 +118,7 @@ public class QuizManager : MonoBehaviour
 
     public IEnumerator loadQuestion(int qNum)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Question question = quizData.questions[qNum];
         if(questionText != null)
         {
@@ -128,7 +128,7 @@ public class QuizManager : MonoBehaviour
 
     public IEnumerator loadAnswers(int qNum)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         // Change color of bubble back to white
         bubbleImg1.color = Color.white;

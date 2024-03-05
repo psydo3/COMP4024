@@ -17,7 +17,7 @@ public class DisplayScore : MonoBehaviour
     {
         if(scoreText != null)
         {
-            scoreText.text = "Congrats";
+            scoreText.text = "Good Job! You have scored "+ QuizManager.getUserScore() + "/10! Keep practising!";
         }
         if(userScore != null)
         {
