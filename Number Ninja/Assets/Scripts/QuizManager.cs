@@ -31,6 +31,7 @@ public class QuizManager : MonoBehaviour
     int questionNumber = 0; // Current question number
     public int chosenIndex; // Answer index chosen by user
     public int incorrectIndex = 10; // Incorrect index chosen by user
+    public static List<Feedback> feedbackList = new List<Feedback> { };
     
     void Start()
     {
@@ -38,14 +39,14 @@ public class QuizManager : MonoBehaviour
 
         loadQuizData();
         userScore = 0;
-        evaluateAnswer(10);
+        evaluateAnswer(null, 10);
     }
 
     void loadQuizData()
     {
         loadQuizDataFromJson();
-        StartCoroutine (loadQuestion(questionNumber));
-        StartCoroutine (loadAnswers(questionNumber));
+        StartCoroutine(loadQuestion(questionNumber));
+        StartCoroutine(loadAnswers(questionNumber));
     }
 
     public void loadQuizDataFromJson()
@@ -56,7 +57,7 @@ public class QuizManager : MonoBehaviour
         Debug.Log("Quiz data loaded successfully");
     }
     
-    public void evaluateAnswer(int chosenAnswer)
+    public void evaluateAnswer(Question question, int chosenAnswer)
     {
         //Compare the answer the user has clicked with the answer from quiz data
         //When answer is correct
@@ -105,6 +106,9 @@ public class QuizManager : MonoBehaviour
         {
             scoreText.text = userScore.ToString();
         }
+
+        Feedback feedback = new(question.questionText, correctAnswer.ToString(), chosenAnswer.ToString());
+        feedbackList.Add(feedback);
     }
 
     public static int getUserScore()
@@ -156,7 +160,7 @@ public class QuizManager : MonoBehaviour
         Question question = quizData.questions[questionNumber];
         chosenIndex = question.correctAnswerIndex;
         chosenAnswer = int.Parse(question.answers[index]);
-        evaluateAnswer(chosenAnswer);
+        evaluateAnswer(question, chosenAnswer);
 
         questionNumber += 1;
 

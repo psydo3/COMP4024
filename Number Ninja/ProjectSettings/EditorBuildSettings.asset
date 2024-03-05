@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScorePage.unity
     guid: f3692cdcc5a214f07bf8c87ad24992ff
+  - enabled: 1
+    path: Assets/Scenes/UserFeedback.unity
+    guid: 34907a6a46e7a38418a59c7c064c510d
   m_configObjects: {}
