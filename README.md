@@ -11,13 +11,13 @@
 - Editor version: To run our game you will need to download unity version 2022.3.19f1
 ***
 
-### Running the game
+### Running the game:
 Our code supports running the game via the Unity Editor and via an executable file.
 
-## Run with Unity Editor
-1 - Navigate to Number Ninja > Assets > Scenes > Start.
+#### Run with Unity Editor:
+1 - Navigate to Number Ninja > Assets > Scenes > Start.  
 2 - Click the play button in Unity to start the game.
 
-## Run with Executable
-1 - Navigate to Number Ninja > Builds
-2 - Run the Number Ninja executable file.
+#### Run with Executable:
+1 - Navigate to Number Ninja > Builds.  
+2 - Run the "Number Ninja.exe" file.
