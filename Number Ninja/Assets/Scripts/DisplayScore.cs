@@ -25,11 +25,17 @@ public class DisplayScore : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts a new game.
+    /// </summary>
     public void startNewGameOnClick()
     {
         SceneManager.LoadScene("MainGame");
     }
 
+    //// <summary>
+    /// Loads the feedback page.
+    /// </summary>
     public void showFeedbackOnClick()
     {
         SceneManager.LoadScene("UserFeedback");
