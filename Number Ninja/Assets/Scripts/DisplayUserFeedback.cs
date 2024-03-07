@@ -26,18 +26,16 @@ public class DisplayUserFeedback : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads up the main game.
+    /// Starts a new game.
     /// </summary>
-    //Starts the game again
     public void startNewGameOnClick()
     {
         SceneManager.LoadScene("MainGame");
     }
 
     /// <summary>
-    /// Loads the next question feedback
+    /// Loads the feedback for the next question.
     /// </summary>
-    //Next question feedback
     public void showNextFeedbackOnClick()
     {
         if(questionNumber >= 0 && questionNumber < totalNumQuestions-1)
@@ -48,9 +46,8 @@ public class DisplayUserFeedback : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads the previous question feedback
+    /// Loads the feedback for the previous question
     /// </summary>
-    //Previous question feedback
     public void showPrevFeedbackOnClick()
     {
         if (questionNumber >= 1 && questionNumber < totalNumQuestions)
@@ -61,21 +58,17 @@ public class DisplayUserFeedback : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads the score page
+    /// Loads the score page.
     /// </summary>
-    //Load score page
     public void showScorePageOnClick()
     {
         SceneManager.LoadScene("ScorePage");
     }
 
     /// <summary>
-    /// Sets up the feedback
+    /// Sets the feedback fields in Unity UI.
     /// </summary>
-    /// <param>
-    /// int question number
-    ///</param>
-    //Appropriate tick or cross images are chosen depending on user answer
+    /// <param name="questionNumber">The question number that the feedback is set for.</param>
     void setFeedbackFields(int questionNumber)
     {
         int qNumToDisplay = questionNumber + 1;
@@ -102,60 +95,54 @@ public class DisplayUserFeedback : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks if any text on the feedback page is null
+    /// Checks if any feedback field is null.
     /// </summary>
-    /// <return>
-    /// bool returns true if question text, chosen answer text or correct answer text are null
-    /// </return>
+    /// <returns>Boolean value indicating if any of the feedback fields is null.</returns>
     bool isAnyFeedbackFieldNull()
     {
         return questionText == null || chosenAnsText == null || correctAnsText == null;
     }
 
     /// <summary>
-    /// Checks the images are null
+    /// Checks if any answer image field is null.
     /// </summary>
-    /// <return>
-    /// bool returns true if images are null
-    /// </return>
+    /// <returns>Boolean value indicating if any of the feedback fields is null.</returns>
     bool isAnyAnsImgFieldNull()
     {
         return chosenAnsImage == null || correctAnsImage == null;
     }
 
     /// <summary>
-    /// Gets the total number of questions
+    /// Getter funciton for the total number of questions.
     /// </summary>
-    /// <return>
-    /// int returns total number of questions
-    /// </return>
+    /// <returns>Integer value of the total number of questions.</returns>
     public int getTotalNumQuestions()
     {
         return totalNumQuestions;
     }
 
     /// <summary>
-    /// Sets the total number of questions
+    /// Setter functoin for the total number of questions
     /// </summary>
+    /// <param name="totalNumQuestions">The total number of questions in quiz data.</param>
     public void setTotalNumQuestions(int totalNumQuestions)
     {
         this.totalNumQuestions = totalNumQuestions;
     }
 
     /// <summary>
-    /// Gets question number
+    /// Getter function for the current question number.
     /// </summary>
-    /// <return>
-    /// int returns question number
-    /// </return>
+    /// <returns>Integer value of the current question number.</returns>
     public int getQuestionNumber()
     {
         return questionNumber;
     }
 
     /// <summary>
-    /// Sets question number
+    /// Setter function for the current question number.
     /// </summary>
+    /// <param name="questionNumber">The current question number.</param>
     public void setQuestionNumber(int questionNumber)
     {
         this.questionNumber = questionNumber;
