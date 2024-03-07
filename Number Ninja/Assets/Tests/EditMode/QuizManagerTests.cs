@@ -29,7 +29,7 @@ public class QuizManagerTests
     public void EvaluateAnswer_IncreasesScore_WhenCorrect()
     {
         quizManager.loadAnswers(0);
-        quizManager.evaluateAnswer(null, 2);
+        quizManager.evaluateAnswer(null, 2, -1);
         Assert.AreEqual(1, QuizManager.getUserScore());
     }
 
@@ -37,7 +37,7 @@ public class QuizManagerTests
     public void EvaluateAnswer_DoesNotIncreaseScore_WhenIncorrect()
     {
         quizManager.loadAnswers(0);
-        quizManager.evaluateAnswer(null, 999);
+        quizManager.evaluateAnswer(null, 999, -1);
         Assert.AreEqual(0, QuizManager.getUserScore());
     }
 
