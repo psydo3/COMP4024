@@ -14,10 +14,10 @@
 ### Running the game
 Our code supports running the game via the Unity Editor and via an executable file.
 
-##Run with Unity Editor
+## Run with Unity Editor
 1 - Navigate to Number Ninja > Assets > Scenes > Start.
 2 - Click the play button in Unity to start the game.
 
-##Run with Executable
+## Run with Executable
 1 - Navigate to Number Ninja > Builds
 2 - Run the Number Ninja executable file.
