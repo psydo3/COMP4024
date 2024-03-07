@@ -23,8 +23,20 @@ Our code supports running the game via the Unity Editor and via an executable fi
 2 - Run the "Number Ninja.exe" file.
 ***
 
+### Project Structure
+![image](https://github.com/psydo3/COMP4024/assets/42401629/44d8558b-c18c-4951-937e-9465ad0cc627)  
+    **Assets**: Contains all the project's assets, including scripts, scenes, images, tests and resources.  
+        **Images**: Directory for image assets.  
+        **Resources**: Contains quiz data in a json file. It can be loaded dynamically at runtime using Resources.Load().  
+        **Scenes**: Contains all the scene files for the Unity project.  
+        **Scripts**: The folder contains all the C# scripts.  
+        **Tests**: This directory is used for unit tests.  
+    **Builds**: Contains all the build files including the executable file.  
+    **Logs**: Contains log files that Unity generates.  
+***
+
 ### Navigating our Git Branches
-![image](https://github.com/psydo3/COMP4024/assets/42401629/2c9720ef-4aa0-4767-934e-c098d0378e25)
+![image](https://github.com/psydo3/COMP4024/assets/42401629/2c9720ef-4aa0-4767-934e-c098d0378e25)  
 - We have two primary branches - main and develop. We use a new feature branch for every feature that we work on.  
   All of our development effort happens in feature branches which are created from the develop branch. Once the feature development is complete, the feature branch is promptly merged into the develop branch and then deleted once safe.  
   After further testing, once its ready for deployment, we merge the develop branch into the main branch.
