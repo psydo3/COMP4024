@@ -61,19 +61,55 @@ public class DisplayUserFeedback : MonoBehaviour
     void setFeedbackFields(int questionNumber)
     {
         int qNumToDisplay = questionNumber + 1;
-        questionText.text = "Q"+ qNumToDisplay + ". " + QuizManager.feedbackList[questionNumber].questionText;
-        chosenAnsText.text = QuizManager.feedbackList[questionNumber].chosenAnswer;
-        correctAnsText.text = QuizManager.feedbackList[questionNumber].correctAnswer;
+        if (!isAnyFeedbackFieldNull())
+        {
+            questionText.text = "Q" + qNumToDisplay + ". " + QuizManager.feedbackList[questionNumber].questionText;
+            chosenAnsText.text = QuizManager.feedbackList[questionNumber].chosenAnswer;
+            correctAnsText.text = QuizManager.feedbackList[questionNumber].correctAnswer;
+        }
 
-        if (QuizManager.feedbackList[questionNumber].isCorrect)
+        if (!isAnyAnsImgFieldNull())
         {
-            chosenAnsImage.sprite = tickSprite;
-            correctAnsImage.sprite = tickSprite;
+            if (QuizManager.feedbackList[questionNumber].isAnswerCorrect)
+            {
+                chosenAnsImage.sprite = tickSprite;
+                correctAnsImage.sprite = tickSprite;
+            }
+            else
+            {
+                chosenAnsImage.sprite = crossSprite;
+                correctAnsImage.sprite = tickSprite;
+            }
         }
-        else
-        {
-            chosenAnsImage.sprite = crossSprite;
-            correctAnsImage.sprite = tickSprite;
-        }
+    }
+
+    bool isAnyFeedbackFieldNull()
+    {
+        return questionText == null || chosenAnsText == null || correctAnsText == null;
+    }
+
+    bool isAnyAnsImgFieldNull()
+    {
+        return chosenAnsImage == null || correctAnsImage == null;
+    }
+
+    public int getTotalNumQuestions()
+    {
+        return totalNumQuestions;
+    }
+
+    public void setTotalNumQuestions(int totalNumQuestions)
+    {
+        this.totalNumQuestions = totalNumQuestions;
+    }
+
+    public int getQuestionNumber()
+    {
+        return questionNumber;
+    }
+
+    public void setQuestionNumber(int questionNumber)
+    {
+        this.questionNumber = questionNumber;
     }
 }

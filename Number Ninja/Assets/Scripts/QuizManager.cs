@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.ComponentModel.Design;
+using System.Linq;
 
 public class QuizManager : MonoBehaviour
 {
@@ -37,13 +39,15 @@ public class QuizManager : MonoBehaviour
 
         loadQuizData();
         userScore = 0;
-        //evaluateAnswer(null, 10, null);
     }
 
     //Loads questions and answers from file
     void loadQuizData()
     {
-        loadQuizDataFromJson();
+        if (quizData == null || quizData.questions.Length == 0)
+        {
+            loadQuizDataFromJson();
+        }
         StartCoroutine(loadQuestion(questionNumber));
         StartCoroutine(loadAnswers(questionNumber));
     }
@@ -98,6 +102,8 @@ public class QuizManager : MonoBehaviour
 
     public IEnumerator loadAnswers(int qNum)
     {
+        Debug.Log("Entered loadAnswer()");
+
         yield return new WaitForSeconds(1);
 
         if (!isAnyBubbleImgNull())
