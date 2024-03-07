@@ -41,7 +41,9 @@ public class QuizManager : MonoBehaviour
         userScore = 0;
     }
 
-    //Loads questions and answers from file
+    /// <summary>
+    /// Loads the quiz data.
+    /// </summary>
     void loadQuizData()
     {
         if (quizData == null || quizData.questions.Length == 0)
@@ -52,6 +54,9 @@ public class QuizManager : MonoBehaviour
         StartCoroutine(loadAnswers(questionNumber));
     }
 
+    /// <summary>
+    /// Loads the quiz data from the json file.
+    /// </summary>
     public void loadQuizDataFromJson()
     {
         TextAsset quizJson = Resources.Load<TextAsset>("quizData"); // Load the JSON file from Resources
@@ -59,7 +64,13 @@ public class QuizManager : MonoBehaviour
 
         Debug.Log("Quiz data loaded successfully");
     }
-    
+
+    /// <summary>
+    /// Evaluates the answer that the user has clicked.
+    /// </summary>
+    /// <param name="question">The current question.</param>
+    /// <param name="chosenAnswer">The answer that the user has chosen.</param>
+    /// <param name="chosenAnswerIndex">The index of the bubble that the user has clicked.</param>
     public void evaluateAnswer(Question question, int chosenAnswer, int chosenAnswerIndex)
     {
         //Compare the answer the user has clicked with the answer from quiz data
