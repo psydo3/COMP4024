@@ -21,11 +21,3 @@ Our code supports running the game via the Unity Editor and via an executable fi
 #### Run with Executable:
 1 - Navigate to Number Ninja > Builds.  
 2 - Run the "Number Ninja.exe" file.
-***
-
-### Navigating our Git Branches
-![image](https://github.com/psydo3/COMP4024/assets/42401629/2c9720ef-4aa0-4767-934e-c098d0378e25)
-- We have two primary branches - main and develop. We use a new feature branch for every feature that we work on.  
-  All of our development effort happens in feature branches which are created from the develop branch. Once the feature development is complete, the feature branch is promptly merged into the develop branch and then deleted once safe.  
-  After further testing, once its ready for deployment, we merge the develop branch into the main branch.
-
