@@ -31,7 +31,7 @@ public class QuizManager : MonoBehaviour
     int correctAnswer; // The correct answer to the question
     int chosenAnswer; // The answer selected by the user
     int questionNumber = 0; // Current question number
-    public static List<Feedback> feedbackList = new List<Feedback> { };
+    public static List<Feedback> feedbackList = new List<Feedback> { }; // Variable to store the answered question feedback
     
     void Start()
     {
@@ -68,9 +68,9 @@ public class QuizManager : MonoBehaviour
     /// <summary>
     /// Evaluates the answer that the user has clicked.
     /// </summary>
-    /// <param name="question">The current question.</param>
+    /// <param name="question">The current question that is being evaluated.</param>
     /// <param name="chosenAnswer">The answer that the user has chosen.</param>
-    /// <param name="chosenAnswerIndex">The index of the bubble that the user has clicked.</param>
+    /// <param name="chosenAnswerIndex">The index of the answer bubble that the user has clicked on.</param>
     public void evaluateAnswer(Question question, int chosenAnswer, int chosenAnswerIndex)
     {
         //Compare the answer the user has clicked with the answer from quiz data
@@ -96,11 +96,18 @@ public class QuizManager : MonoBehaviour
         feedbackList.Add(feedback);
     }
 
+    /// <summary>
+    /// Getter function for the user score.
+    /// </summary>
+    /// <returns>Integer value of the user score.</returns>
     public static int getUserScore()
     {
         return userScore;
     }
 
+    /// <summary>
+    /// Sets the question field in Unity UI frin quiz data.
+    /// </summary>
     public IEnumerator loadQuestion(int qNum)
     {
         yield return new WaitForSeconds(1);
@@ -111,6 +118,9 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the answer fields in Unity UI from quiz data.
+    /// </summary>
     public IEnumerator loadAnswers(int qNum)
     {
         Debug.Log("Entered loadAnswer()");
@@ -144,7 +154,10 @@ public class QuizManager : MonoBehaviour
         correctAnswer = int.Parse(question.answers[question.correctAnswerIndex]);
     }
 
-    //Populate with next question and answer options
+    /// <summary>
+    /// Loads the next question when the user clicks on any answer.
+    /// </summary>
+    /// <param name="clickedBubbleIndex">The index of the answer bubble that the user has clicked on.</param>
     public void loadNextQuestionOnClick(int clickedBubbleIndex)
     {
         Question question = quizData.questions[questionNumber];
@@ -165,6 +178,11 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the colour of the answer bubble to green if correct, red otherwise.
+    /// </summary>
+    /// <param name="color">The color that the bubble has to be set to.</param>
+    /// <param name="chosenAnswerIndex">The index of the answer bubble that the user has clicked on.</param>
     void setAnswerBubbleColour(Color color, int chosenAnswerIndex)
     {
         if (!isAnyBubbleImgNull())
@@ -196,22 +214,38 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if any of the answer bubble fields is null.
+    /// </summary>
+    /// <returns>Boolean value indicating if any of the answer bubble fields is null.</returns>
     bool isAnyBubbleNull()
     {
         return bubble1 == null || bubble2 == null || bubble3 == null
             || bubble4 == null || bubble5 == null || bubble6 == null;
     }
+
+    /// <summary>
+    /// Checks if any of the answer bubble image fields is null.
+    /// </summary>
+    /// <returns>Boolean value indicating if any of the answer bubble image fields is null.</returns>
     bool isAnyBubbleImgNull()
     {
         return bubbleImg1 == null || bubbleImg2 == null || bubbleImg3 == null
             || bubbleImg4 == null || bubbleImg5 == null || bubbleImg6 == null;
     }
 
+    /// <summary>
+    /// Setter function for the quiz data.
+    /// </summary>
     public void setQuizData(QuizData quizData)
     {
         this.quizData = quizData;
     }
 
+    /// <summary>
+    /// Setter function for the question number.
+    /// </summary>
+    /// <returns>Integer value of the question number</returns>
     public int getQuestionNumber()
     {
         return questionNumber;
